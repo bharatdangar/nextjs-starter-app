@@ -1,4 +1,4 @@
-import Head from 'next/head'
+import Head from 'next/head';
 
 const TheMeta = () => {
   const site = {
@@ -31,7 +31,7 @@ const TheMeta = () => {
       {/* All browsers supporting preload also supports .woff2, so no need to preload .woff files. */}
       {/* <link rel="preload" href="/fonts/.woff2" as="font" type="font/woff2" crossOrigin="anonymous" /> */}
     </Head>
-  )
-}
+  );
+};
 
 export default TheMeta;

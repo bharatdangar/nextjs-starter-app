@@ -9,8 +9,8 @@ export const AppIsReadyProvider: FC<PropsWithChildren> = ({ children }) => {
       {children}
     </Context.Provider>
   );
-}
+};
 
 export const useAppIsReadyContext = () => {
   return useContext(Context);
-}
+};

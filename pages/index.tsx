@@ -1,6 +1,6 @@
-import { FC } from 'react'
-import Head from 'next/head'
-import Link from 'next/link'
+import { FC } from 'react';
+import Head from 'next/head';
+import Link from 'next/link';
 
 const Home: FC = () => {
   return (
@@ -17,7 +17,7 @@ const Home: FC = () => {
         </p>
       </section>
     </div>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;

@@ -5,6 +5,6 @@ const Custom404 = () => {
       <h2>Page not found</h2>
     </div>
   );
-}
+};
 
 export default Custom404;

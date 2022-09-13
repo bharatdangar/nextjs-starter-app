@@ -1,5 +1,5 @@
-import { FC } from 'react'
-import Head from 'next/head'
+import { FC } from 'react';
+import Head from 'next/head';
 
 const About: FC = () => {
   return (
@@ -15,7 +15,7 @@ const About: FC = () => {
         </p>
       </section>
     </div>
-  )
-}
+  );
+};
 
-export default About
+export default About;

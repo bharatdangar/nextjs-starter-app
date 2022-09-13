@@ -1,8 +1,8 @@
-import { AppProps } from 'next/app'
-import '../css/app.css'
-import TheMeta from '../components/TheMeta'
-import TheAppReveal from '../components/TheAppReveal'
-import { AppIsReadyProvider } from '../context/appIsReady'
+import { AppProps } from 'next/app';
+import '../css/app.css';
+import TheMeta from '../components/TheMeta';
+import TheAppReveal from '../components/TheAppReveal';
+import { AppIsReadyProvider } from '../context/appIsReady';
 
 const App = ({ Component, pageProps }: AppProps) => {
   return (
@@ -14,6 +14,6 @@ const App = ({ Component, pageProps }: AppProps) => {
     </AppIsReadyProvider>
     </div>
   );
-}
+};
 
-export default App
+export default App;
