@@ -1,4 +1,8 @@
 {
+  "name": "nextjs-starter-app",
+  "version": "1.0.0",
+  "description": "Next.js Starter App",
+  "author": "Andreas Antonsson <hello@andreasantonsson.dev>",
   "private": true,
   "scripts": {
     "dev": "next dev",
