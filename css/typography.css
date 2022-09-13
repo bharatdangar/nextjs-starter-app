@@ -1,0 +1,71 @@
+@tailwind base;
+
+@layer base {
+  /*
+  ** <body>
+  ** 1. Prevent adjustments of font size after orientation changes in IE on Windows Phone and in iOS.
+  ** 2. Change the default tap highlight to be completely transparent in iOS.
+  */
+  body {
+    @apply font-body text-base antialiased;
+    -webkit-text-size-adjust: 100%; /* 1 */
+    -webkit-tap-highlight-color: rgba(0,0,0,0); /* 2 */
+    font-kerning: normal;
+  }
+
+  /*
+  ** Responsive typography and sizes
+  **
+  ** This implementation is changing the root font size according to screen size.
+  ** It's then important to use rem or em throughout the app to size everything correctly, in relation
+  ** viewport and typography sizes.
+  */
+
+  :root {
+    --size-base: 10;
+    --size-artboard: 640;
+  }
+
+  @media screen(md) {
+    :root {
+      --size-artboard: 1600;
+    }
+  }
+
+  html {
+    font-size: 10px;
+
+    @media screen(md) {
+      /* Viewport sizing calculation */
+      font-size: calc(var(--size-base) * (100vw / var(--size-artboard)));
+    }
+  }
+
+  /*
+  ** Text selection
+  */
+  ::selection {
+    @apply bg-primary text-white;
+    text-shadow: none;
+  }
+
+  /*
+  ** <p>
+  ** 1. Break overflowing words.
+  ** 2. Don't display empty paragraphs.
+  */
+  p {
+    @apply break-words; /* 1 */
+  }
+
+  p:empty {
+    @apply hidden; /* 2 */
+  }
+
+  /*
+  ** SVG elements should fallback to their surrounding text color.
+  */
+  svg {
+    fill: currentColor;
+  }
+}

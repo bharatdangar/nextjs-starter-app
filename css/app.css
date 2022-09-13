@@ -1,0 +1,44 @@
+@charset "utf-8";
+
+@import "./fonts.css";
+@import "./typography.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /*
+  ** <html> + <body>
+  ** 1. Prevent vertical overflow on document.
+  ** 2. Force scrollbars to always be visible to prevent awkward ‘jumps’ when
+  **    navigating between pages that do/do not have enough content to produce
+  **    scrollbars naturally.
+  ** 3. Ensure the page always fills at least the entire height of the viewport.
+  ** 4. Make sure page is always 100% width even when we lock body scroll with overflow: hidden.
+  */
+  html {
+    overflow-x: hidden; /* 1 */
+    overflow-y: scroll; /* 2 */
+    min-height: 100%; /* 3 */
+    /* scroll-behavior: smooth; */
+  }
+
+  body {
+    width: 100%; /* 4 */
+  }
+
+  /*
+  ** :root
+  */
+  :root {
+
+  }
+
+  /*
+  ** Default :focus-visible style
+  */
+  :focus-visible {
+    @apply outline-2 outline-dashed;
+  }
+}
