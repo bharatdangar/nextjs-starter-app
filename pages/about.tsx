@@ -1,20 +1,17 @@
 import { FC } from 'react';
 import Head from 'next/head';
+import Layout from '../components/Layout';
 
 const About: FC = () => {
   return (
-    <div>
+    <Layout>
       <Head>
-        {/* <title>{siteTitle}</title> */}
+        <title>About</title>
       </Head>
       <section>
-        <p>About</p>
-        <p>
-          (This is a sample website - you’ll be building a site like this in{' '}
-          <a href="https://nextjs.org/learn">our Next.js tutorial</a>.)
-        </p>
+        <p>About page</p>
       </section>
-    </div>
+    </Layout>
   );
 };
 
