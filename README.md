@@ -3,9 +3,10 @@
 ## Included
  - Typescript
  - ESLint
- - Tailwind
+ - Tailwind CSS
  - Framer Motion
- - Base styling, layouts, helper components etc.
+ - Next SEO
+ - Base styling, layouts, helper components, custom 404 etc.
 
 ## Build setup
 ```bash
