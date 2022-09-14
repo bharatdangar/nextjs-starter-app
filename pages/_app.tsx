@@ -1,10 +1,10 @@
 import { FC } from 'react';
 import { AppProps } from 'next/app';
-import '../css/app.css';
+import { AnimatePresence } from 'framer-motion';
 import TheDefaultMeta from '../components/TheDefaultMeta';
 import TheAppReveal from '../components/TheAppReveal';
 import { AppIsReadyProvider } from '../context/appIsReady';
-import { AnimatePresence } from 'framer-motion';
+import '../css/app.css';
 
 const App: FC = ({ Component, router, pageProps }: AppProps) => {
   const url = `https://url.url${router.route}`;
