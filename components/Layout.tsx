@@ -1,13 +1,13 @@
 import { FC, PropsWithChildren } from 'react';
 import { motion } from 'framer-motion';
-import LinkNoScroll from './LinkNoScroll';
+import NSLink from './NSLink';
 
 const Layout: FC<PropsWithChildren> = ({ children }) => {
   return (
     <>
       <ul className="flex border">
-      <li><LinkNoScroll href="/">Home</LinkNoScroll></li>
-        <li><LinkNoScroll href="/about">About</LinkNoScroll></li>
+        <li><NSLink href="/">Home</NSLink></li>
+        <li><NSLink href="/about">About</NSLink></li>
       </ul>
       <motion.main
         initial={{ opacity: 0, x: -200, y: 0 }}

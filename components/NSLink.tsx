@@ -5,10 +5,10 @@ interface IProps extends LinkProps {
     children: ReactNode
 }
 
-const LinkNoScroll = ({ children, href, passHref }: IProps): JSX.Element => (
+const NSLink = ({ children, href, passHref }: IProps): JSX.Element => (
     <Link href={href} passHref={passHref} scroll={false}>
         {children}
     </Link>
 );
 
-export default LinkNoScroll;
+export default NSLink;
