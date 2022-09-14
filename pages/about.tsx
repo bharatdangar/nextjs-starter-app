@@ -1,13 +1,9 @@
 import { FC } from 'react';
-import Head from 'next/head';
 import Layout from '../components/Layout';
 
 const About: FC = () => {
   return (
-    <Layout>
-      <Head>
-        <title>About</title>
-      </Head>
+    <Layout title="About" description="This is the about page">
       <section>
         <p>About page</p>
       </section>

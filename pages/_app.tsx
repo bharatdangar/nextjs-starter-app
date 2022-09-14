@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import { AppProps } from 'next/app';
 import '../css/app.css';
-import TheMeta from '../components/TheMeta';
+import TheDefaultMeta from '../components/TheDefaultMeta';
 import TheAppReveal from '../components/TheAppReveal';
 import { AppIsReadyProvider } from '../context/appIsReady';
 import { AnimatePresence } from 'framer-motion';
@@ -12,7 +12,7 @@ const App: FC = ({ Component, router, pageProps }: AppProps) => {
   return (
     <div className="app relative border">
       <AppIsReadyProvider>
-        <TheMeta />
+        <TheDefaultMeta canonical={url} />
         <AnimatePresence
           mode="wait"
           initial={false}
