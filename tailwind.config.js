@@ -40,11 +40,9 @@ module.exports = {
     },
     fontFamily: {
       display: [''],
-      body: [''],
+      body: ['', ...require('tailwindcss/defaultTheme').fontFamily.sans],
     },
     fontSize: {
-      xs: '1.2rem',
-      sm: '1.6rem',
       base: '2rem',
     },
     fontWeight: {
@@ -63,6 +61,7 @@ module.exports = {
       tight: '1.25',
       normal: '1.5',
     },
+    // tracking: {},
     borderRadius: {
       none: '0',
       sm: '10px',
@@ -77,6 +76,10 @@ module.exports = {
       lg: '4px',
     },
     extend: {
+      // aspectRatio: {
+      //   '4/3': '4 / 3',
+      //   '3/4': '3 / 4',
+      // },
       transitionTimingFunction: {
         DEFAULT: 'cubic-bezier(1, 0, 0, 1)',
         'in-quad': 'cubic-bezier(0.55, 0.085, 0.68, 0.53)',
@@ -107,6 +110,10 @@ module.exports = {
       },
     },
   },
-  safelist: [],
+  safelist: [
+    // {
+    //   pattern: /bg-.+/,
+    // },
+  ],
   plugins: [],
 };
