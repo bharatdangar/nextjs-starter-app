@@ -6,9 +6,9 @@ interface IProps extends LinkProps {
 }
 
 const NSLink = ({ children, href, passHref }: IProps): JSX.Element => (
-    <Link href={href} passHref={passHref} scroll={false}>
-        {children}
-    </Link>
+  <Link href={href} passHref={passHref} scroll={false}>
+    {children}
+  </Link>
 );
 
 export default NSLink;

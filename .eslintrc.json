@@ -1,24 +1,14 @@
 {
   "extends": "next/core-web-vitals",
   "rules": {
-    // Enforce use of comma
-    // https://eslint.org/docs/rules/comma-dangle#always-multiline
     "comma-dangle": ["error", "always-multiline"],
-
-    // https://eslint.org/docs/rules/object-curly-newline#consistent
     "object-curly-newline": ["error", { "consistent": true }],
-
-    // https://eslint.org/docs/rules/curly#consistent
     "curly": ["error", "multi", "consistent"],
-
-    // Enforce use of semicolons
-    // https://eslint.org/docs/rules/semi#omitlastinonelineblock
     "semi": ["error", "always", { "omitLastInOneLineBlock": true }],
-
-    // https://eslint.org/docs/rules/max-len
     "max-len": ["error", { "code": 150 }],
-
-    // https://eslint.org/docs/latest/rules/no-unused-vars
-    "no-unused-vars": "warn"
+    "no-unused-vars": "warn",
+    "indent": ["error", 2],
+    "react/jsx-max-props-per-line": ["error", { "maximum": { "single": 4, "multi": 1 } }],
+    "react/jsx-closing-bracket-location": ["error", "tag-aligned"]
   }
 }
