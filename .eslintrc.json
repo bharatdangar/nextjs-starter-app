@@ -4,7 +4,7 @@
     "comma-dangle": ["error", "always-multiline"],
     "object-curly-newline": ["error", { "consistent": true }],
     "curly": ["error", "multi", "consistent"],
-    "semi": ["error", "always", { "omitLastInOneLineBlock": true }],
+    "semi": ["error", "never"],
     "max-len": ["error", { "code": 150 }],
     "no-unused-vars": "warn",
     "indent": ["error", 2],
