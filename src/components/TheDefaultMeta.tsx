@@ -1,6 +1,6 @@
-import { FC } from 'react';
-import Head from 'next/head';
-import { DefaultSeo } from 'next-seo';
+import { FC } from 'react'
+import Head from 'next/head'
+import { DefaultSeo } from 'next-seo'
 
 interface TheDefaultMetaProps {
   canonical: string
@@ -12,7 +12,7 @@ const TheDefaultMeta: FC<TheDefaultMetaProps> = ({ canonical }) => {
     locale: 'en',
     name: 'Next.js Starter App',
     description: 'default description',
-  };
+  }
 
   return (
     <>
@@ -50,7 +50,7 @@ const TheDefaultMeta: FC<TheDefaultMetaProps> = ({ canonical }) => {
         {/* <link rel="preload" href="/fonts/.woff2" as="font" type="font/woff2" crossOrigin="anonymous" /> */}
       </Head>
     </>
-  );
-};
+  )
+}
 
-export default TheDefaultMeta;
+export default TheDefaultMeta

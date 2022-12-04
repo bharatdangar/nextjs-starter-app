@@ -1,22 +1,22 @@
-import { FC, useCallback, useEffect } from 'react';
-import { motion, AnimatePresence } from "framer-motion";
-import { useAppIsReadyContext } from "../context/appIsReady";
+import { FC, useCallback, useEffect } from 'react'
+import { motion, AnimatePresence } from "framer-motion"
+import { useAppIsReadyContext } from "../context/appIsReady"
 
 const TheAppReveal: FC = () => {
-  const [appIsReady, setAppIsReady] = useAppIsReadyContext();
+  const [appIsReady, setAppIsReady] = useAppIsReadyContext()
 
   const hideAppReveal = useCallback(() => {
-    setAppIsReady(true);
-    window.removeEventListener('load', hideAppReveal);
-  }, [setAppIsReady]);
+    setAppIsReady(true)
+    window.removeEventListener('load', hideAppReveal)
+  }, [setAppIsReady])
 
   useEffect(() => {
     if (!appIsReady)
       if (document.readyState !== 'complete')
-        window.addEventListener('load', hideAppReveal);
+        window.addEventListener('load', hideAppReveal)
       else
-        hideAppReveal();
-  }, [appIsReady, hideAppReveal]);
+        hideAppReveal()
+  }, [appIsReady, hideAppReveal])
 
   return (
     <AnimatePresence>
@@ -29,7 +29,7 @@ const TheAppReveal: FC = () => {
         />
       )}
     </AnimatePresence>
-  );
-};
+  )
+}
 
-export default TheAppReveal;
+export default TheAppReveal

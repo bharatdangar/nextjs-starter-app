@@ -1,7 +1,7 @@
-import { FC, PropsWithChildren } from 'react';
-import { NextSeo } from 'next-seo';
-import { motion } from 'framer-motion';
-import NSLink from './NSLink';
+import { FC, PropsWithChildren } from 'react'
+import { NextSeo } from 'next-seo'
+import { motion } from 'framer-motion'
+import NSLink from './NSLink'
 
 type LayoutProps = {
   title?: string;
@@ -31,7 +31,7 @@ const Layout: FC<PropsWithChildren<LayoutProps>> = ({ title, description, image,
         {children}
       </motion.main>
     </>
-  );
-};
+  )
+}
 
-export default Layout;
+export default Layout

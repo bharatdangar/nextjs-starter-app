@@ -1,5 +1,5 @@
-import { FC } from 'react';
-import Layout from '../components/Layout';
+import { FC } from 'react'
+import Layout from '../components/Layout'
 
 const Home: FC = () => {
   return (
@@ -8,7 +8,7 @@ const Home: FC = () => {
         <p>Home page</p>
       </section>
     </Layout>
-  );
-};
+  )
+}
 
-export default Home;
+export default Home

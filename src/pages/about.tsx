@@ -1,5 +1,5 @@
-import { FC } from 'react';
-import Layout from '../components/Layout';
+import { FC } from 'react'
+import Layout from '../components/Layout'
 
 const About: FC = () => {
   return (
@@ -8,7 +8,7 @@ const About: FC = () => {
         <p>About page</p>
       </section>
     </Layout>
-  );
-};
+  )
+}
 
-export default About;
+export default About
