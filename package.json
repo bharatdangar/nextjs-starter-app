@@ -8,9 +8,11 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "analyze": "ANALYZE=true next build"
   },
   "dependencies": {
+    "@next/bundle-analyzer": "^13.0.6",
     "framer-motion": "^7.3.2",
     "next": "^13.0.6",
     "next-seo": "^5.5.0",
