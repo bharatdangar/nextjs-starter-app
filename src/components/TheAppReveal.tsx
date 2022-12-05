@@ -1,9 +1,12 @@
-import { FC, useCallback, useEffect } from 'react'
-import { motion, AnimatePresence } from "framer-motion"
+import { FC, useCallback, useEffect, useRef } from 'react'
+import { Transition } from 'react-transition-group'
+import { gsap } from 'gsap'
 import { useAppIsReadyContext } from "../context/appIsReady"
 
 const TheAppReveal: FC = () => {
+  const nodeRef = useRef(null)
   const [appIsReady, setAppIsReady] = useAppIsReadyContext()
+  const duration = 0.25
 
   const hideAppReveal = useCallback(() => {
     setAppIsReady(true)
@@ -18,17 +21,20 @@ const TheAppReveal: FC = () => {
         hideAppReveal()
   }, [appIsReady, hideAppReveal])
 
+  const onExit = () => {
+    gsap.to(nodeRef.current, { autoAlpha: 0, duration: duration, ease: 'none' })
+  }
+
   return (
-    <AnimatePresence>
-      {!appIsReady && (
-        <motion.div
-          className="fixed inset-0 flex items-center justify-center bg-white"
-          initial={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 0.25 }}
-        />
-      )}
-    </AnimatePresence>
+    <Transition
+      nodeRef={nodeRef}
+      in={!appIsReady}
+      timeout={duration * 1000}
+      onExit={onExit}
+      unmountOnExit={true}
+    >
+      <div ref={nodeRef} className="fixed inset-0 flex items-center justify-center bg-dark" />
+    </Transition>
   )
 }
 
