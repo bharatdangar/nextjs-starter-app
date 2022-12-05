@@ -1,10 +1,17 @@
 # Next.js Starter App
 
+## 🚀&nbsp; Deployment status
+| Branch | Environment | Status | URL |
+| - | - | - | - |
+| `main` | Production | ![Vercel](https://therealsujitk-vercel-badge.vercel.app/?app=unnastudio-nextjs-starter-app) | https://unnastudio-nextjs-starter-app.vercel.app/ |
+
+---
 ## Included
  - Typescript
  - ESLint
  - Tailwind CSS
- - Framer Motion
+ - GSAP
+ - react-transition-group
  - Next SEO
  - Base styling, layouts, helper components, custom 404 etc.
 
@@ -21,4 +28,7 @@ yarn build
 
 # Start a Next.js production server
 yarn start
+
+# Analyze build bundle
+yarn analyze
 ```
