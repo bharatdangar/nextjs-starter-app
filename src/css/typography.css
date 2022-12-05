@@ -7,7 +7,7 @@
   ** 2. Change the default tap highlight to be completely transparent in iOS.
   */
   body {
-    @apply font-body text-base antialiased;
+    @apply text-base antialiased;
     -webkit-text-size-adjust: 100%; /* 1 */
     -webkit-tap-highlight-color: rgba(0,0,0,0); /* 2 */
     font-kerning: normal;

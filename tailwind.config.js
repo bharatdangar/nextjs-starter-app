@@ -40,7 +40,7 @@ module.exports = {
     },
     fontFamily: {
       display: [''],
-      body: ['', ...require('tailwindcss/defaultTheme').fontFamily.sans],
+      body: ['var(--font-inter)', ...require('tailwindcss/defaultTheme').fontFamily.sans],
     },
     fontSize: {
       base: '2rem',
