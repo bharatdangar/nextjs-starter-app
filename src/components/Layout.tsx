@@ -1,14 +1,11 @@
 import { FC, PropsWithChildren } from 'react'
 import ThePageTransition from './animation/ThePageTransition'
-import NSLink from './NSLink'
+import SiteHeader from './navigation/SiteHeader'
 
 const Layout: FC<PropsWithChildren> = ({ children }) => {
   return (
     <>
-      <ul className="flex border">
-        <li><NSLink href="/">Home</NSLink></li>
-        <li><NSLink href="/about">About</NSLink></li>
-      </ul>
+      <SiteHeader />
       <ThePageTransition>
         <div id="main">
           {children}
