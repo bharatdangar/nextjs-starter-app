@@ -1,11 +1,11 @@
 import { FC, useEffect } from 'react'
 import { AppProps } from 'next/app'
 import TagManager from 'react-gtm-module'
-import { AnimatePresence } from 'framer-motion'
 import TheDefaultMeta from '../components/TheDefaultMeta'
 import TheAppReveal from '../components/TheAppReveal'
 import { AppIsReadyProvider } from '../context/appIsReady'
 import '../css/app.css'
+import Layout from '../components/Layout'
 
 const App: FC = ({ Component, router, pageProps }: AppProps) => {
   const url = `${process.env.NEXT_PUBLIC_BASE_URL}${router.route}`
@@ -18,13 +18,9 @@ const App: FC = ({ Component, router, pageProps }: AppProps) => {
     <div className="app relative border">
       <AppIsReadyProvider>
         <TheDefaultMeta canonical={url} />
-        <AnimatePresence
-          mode="wait"
-          initial={false}
-          onExitComplete={() => window.scrollTo(0, 0)}
-        >
-          <Component {...pageProps} key={url} />
-        </AnimatePresence>
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
         <TheAppReveal />
       </AppIsReadyProvider>
     </div>
