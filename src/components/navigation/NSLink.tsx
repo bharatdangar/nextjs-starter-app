@@ -1,11 +1,11 @@
-import React, { ReactNode } from 'react'
+import { FC, ReactNode } from 'react'
 import Link, { LinkProps } from 'next/link'
 
-interface IProps extends LinkProps {
+interface Props extends LinkProps {
     children: ReactNode
 }
 
-const NSLink = ({ children, href, passHref }: IProps): JSX.Element => (
+const NSLink: FC<Props> = ({ children, href, passHref }) => (
   <Link href={href} passHref={passHref} scroll={false}>
     {children}
   </Link>
