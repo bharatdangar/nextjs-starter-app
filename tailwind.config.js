@@ -81,7 +81,13 @@ module.exports = {
       //   '3/4': '3 / 4',
       // },
       transitionTimingFunction: {
-        DEFAULT: 'cubic-bezier(1, 0, 0, 1)',
+        /* Defaults: quint (called "power4" in GSAP) */
+        DEFAULT: 'cubic-bezier(0.83, 0, 0.17, 1)',
+        in: 'cubic-bezier(0.64, 0, 0.78, 0)',
+        out: 'cubic-bezier(0.22, 1, 0.36, 1)',
+        'in-out': 'cubic-bezier(0.83, 0, 0.17, 1)',
+
+        /* =ther */
         'in-quad': 'cubic-bezier(0.55, 0.085, 0.68, 0.53)',
         'in-cubic': 'cubic-bezier(0.55, 0.055, 0.675, 0.19)',
         'in-quart': 'cubic-bezier(0.895, 0.03, 0.685, 0.22)',
