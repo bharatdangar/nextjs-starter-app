@@ -1,25 +1,25 @@
 import { FC, useCallback, useEffect, useRef } from 'react'
 import { Transition } from 'react-transition-group'
 import { gsap } from 'gsap'
-import { useAppIsReadyContext } from "../context/appIsReady"
+import { useIsAppReadyContext } from "../context/isAppReady"
 
 const TheAppReveal: FC = () => {
   const nodeRef = useRef(null)
-  const [appIsReady, setAppIsReady] = useAppIsReadyContext()
+  const [isAppReady, setIsAppReady] = useIsAppReadyContext()
   const duration = 0.25
 
   const hideAppReveal = useCallback(() => {
-    setAppIsReady(true)
+    setIsAppReady(true)
     window.removeEventListener('load', hideAppReveal)
-  }, [setAppIsReady])
+  }, [setIsAppReady])
 
   useEffect(() => {
-    if (!appIsReady)
+    if (!isAppReady)
       if (document.readyState !== 'complete')
         window.addEventListener('load', hideAppReveal)
       else
         hideAppReveal()
-  }, [appIsReady, hideAppReveal])
+  }, [isAppReady, hideAppReveal])
 
   const onExit = () => {
     gsap.to(nodeRef.current, { autoAlpha: 0, duration: duration, ease: 'none' })
@@ -28,7 +28,7 @@ const TheAppReveal: FC = () => {
   return (
     <Transition
       nodeRef={nodeRef}
-      in={!appIsReady}
+      in={!isAppReady}
       timeout={duration * 1000}
       onExit={onExit}
       unmountOnExit={true}

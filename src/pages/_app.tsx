@@ -4,7 +4,7 @@ import { Inter } from '@next/font/google'
 import TagManager from 'react-gtm-module'
 import TheDefaultMeta from '../components/TheDefaultMeta'
 import TheAppReveal from '../components/TheAppReveal'
-import { AppIsReadyProvider } from '../context/appIsReady'
+import { IsAppReadyProvider } from '../context/isAppReady'
 import Layout from '../components/Layout'
 import '../css/app.css'
 
@@ -22,13 +22,13 @@ const App: FC = ({ Component, router, pageProps }: AppProps) => {
 
   return (
     <div className={`app relative border font-body ${inter.variable}`}>
-      <AppIsReadyProvider>
+      <IsAppReadyProvider>
         <TheDefaultMeta canonical={url} />
         <Layout>
           <Component {...pageProps} />
         </Layout>
         <TheAppReveal />
-      </AppIsReadyProvider>
+      </IsAppReadyProvider>
     </div>
   )
 }
