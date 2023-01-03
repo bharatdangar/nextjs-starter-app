@@ -1,6 +1,6 @@
 import { FC } from 'react'
-import NSLink from './NSLink'
 import Logotype from '../Logotype'
+import NSLink from './NSLink'
 
 const SiteHeader: FC = () => {
   return (
