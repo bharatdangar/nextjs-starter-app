@@ -13,6 +13,7 @@ module.exports = {
       lg: '1200px',
       xl: '1440px',
       '2xl': '1920px',
+      'mouse': {'raw': '(hover: hover)'},
     },
     colors: {
       transparent: 'transparent',
