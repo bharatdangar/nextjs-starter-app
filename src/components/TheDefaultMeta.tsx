@@ -1,14 +1,17 @@
 import { FC } from 'react'
 import Head from 'next/head'
 import { DefaultSeo } from 'next-seo'
+import resolveConfig from 'tailwindcss/resolveConfig'
+import tailwindConfig from '../../tailwind.config.js'
 
 interface TheDefaultMetaProps {
   canonical: string
 }
 
 const TheDefaultMeta: FC<TheDefaultMetaProps> = ({ canonical }) => {
+  const tailwindVars = resolveConfig(tailwindConfig)
   const site = {
-    themeColor: '#000000',
+    themeColor: (tailwindVars.theme.colors as any).light,
     locale: 'en',
     name: 'Next.js Starter App',
     description: 'default description',
@@ -33,7 +36,6 @@ const TheDefaultMeta: FC<TheDefaultMetaProps> = ({ canonical }) => {
           //   url: 'https://www.example.ie/og-image-01.jpg',
           //   width: 1200,
           //   height: 630,
-          //   alt: '',
           // },
           ],
         }}
@@ -45,7 +47,7 @@ const TheDefaultMeta: FC<TheDefaultMetaProps> = ({ canonical }) => {
         <link rel="icon" type="image/x-icon" href="/favicon/favicon.ico" />
         <link rel="apple-touch-icon" href="/favicon/apple-touch-icon-180x180.png" />
         <link rel="mask-icon" href="/favicon/safari-mask-icon.svg" color={site.themeColor}  />
-        {/* Preload fonts */ }
+        {/* Preload fonts (if not using @next/font) */ }
         {/* All browsers supporting preload also supports .woff2, so no need to preload .woff files. */}
         {/* <link rel="preload" href="/fonts/.woff2" as="font" type="font/woff2" crossOrigin="anonymous" /> */}
       </Head>
