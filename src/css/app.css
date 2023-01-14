@@ -1,8 +1,5 @@
 @charset "utf-8";
 
-@import "./typography.css";
-@import "./utilities.css";
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -11,11 +8,11 @@
   /*
   ** <html> + <body>
   ** 1. Prevent vertical overflow on document.
-  ** 2. Force scrollbars to always be visible to prevent awkward ‘jumps’ when
-  **    navigating between pages that do/do not have enough content to produce
-  **    scrollbars naturally.
+  ** 2. Force scrollbars to always be visible to prevent awkward ‘jumps’ when navigating between
+  **    pages that do/do not have enough content to produce  scrollbars naturally.
   ** 3. Ensure the page always fills at least the entire height of the viewport.
-  ** 4. Make sure page is always 100% width even when we lock body scroll with overflow: hidden.
+  ** 4. Prevent adjustments of font size after orientation changes in IE on Windows Phone and in iOS.
+  ** 5. Change the default tap highlight to be completely transparent in iOS.
   */
   html {
     overflow-x: hidden; /* 1 */
@@ -25,8 +22,10 @@
   }
 
   body {
-    width: 100%; /* 4 */
-    @apply bg-white;
+    @apply w-full bg-white text-base antialiased;
+    -webkit-text-size-adjust: 100%; /* 5 */
+    -webkit-tap-highlight-color: rgba(0,0,0,0); /* 6 */
+    font-kerning: normal;
   }
 
   /*
@@ -41,5 +40,105 @@
   */
   :focus-visible {
     @apply outline-2 outline-dashed;
+  }
+
+  /*
+  ** Responsive typography and sizes
+  **
+  ** This implementation is changing the root font size according to screen size.
+  ** It's then important to use rem or em throughout the app to size everything correctly, in relation
+  ** viewport and typography sizes.
+  */
+
+  :root {
+    --size-base: 10;
+    --size-artboard: 640;
+
+    @media screen(md) {
+      --size-artboard: 1600;
+    }
+  }
+
+  html {
+    font-size: 10px;
+
+    @media screen(md) {
+      /* Viewport sizing calculation */
+      font-size: calc(var(--size-base) * (100vw / var(--size-artboard)));
+    }
+  }
+
+  /*
+  ** Text selection
+  */
+  ::selection {
+    @apply bg-primary text-white;
+    text-shadow: none;
+  }
+
+  /*
+  ** <p>
+  ** 1. Break overflowing words.
+  ** 2. Don't display empty paragraphs.
+  */
+  p {
+    @apply break-words; /* 1 */
+
+    &:empty {
+      @apply hidden; /* 2 */
+    }
+  }
+
+  /*
+  ** SVG elements should fallback to their surrounding text color.
+  */
+  svg {
+    fill: currentColor;
+  }
+}
+
+/*
+** Custom utilities
+*/
+@layer utilities {
+  /*
+  ** Scrolling
+  */
+  .hide-scrollbar {
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: -ms-autohiding-scrollbar; /* IE10+ */
+
+    &::-webkit-scrollbar {
+      display: none; /* Chrome, Safari, Edge */
+    }
+  }
+
+  .scrolling-touch {
+    -webkit-overflow-scrolling: touch;
+  }
+
+
+  /*
+  ** Development
+  */
+  .debug {
+    > * {
+      outline: 2px dashed green;
+      > * {
+        outline: 2px dashed tomato;
+        > * {
+          outline: 2px dashed DeepSkyBlue;
+          > * {
+            outline: 2px dashed DeepPink;
+            > * {
+              outline: 2px dashed MediumSlateBlue;
+              * {
+                outline: 2px dashed black;
+              }
+            }
+          }
+        }
+      }
+    }
   }
 }
