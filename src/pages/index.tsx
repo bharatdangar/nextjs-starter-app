@@ -1,13 +1,13 @@
 import { FC } from 'react'
 
-const Home: FC = () => {
+const IndexPage: FC = () => {
   return (
     <>
       <section>
-        <p>Home page</p>
+        <p>IndexPage page</p>
       </section>
     </>
   )
 }
 
-export default Home
+export default IndexPage

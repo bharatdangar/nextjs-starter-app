@@ -1,7 +1,7 @@
 import { FC } from 'react'
 import { NextSeo } from 'next-seo'
 
-const About: FC = () => {
+const AboutPage: FC = () => {
   const title = 'About'
   const description = 'This is the about page'
   const image = {
@@ -21,4 +21,4 @@ const About: FC = () => {
   )
 }
 
-export default About
+export default AboutPage
