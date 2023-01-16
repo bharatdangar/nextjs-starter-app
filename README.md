@@ -10,10 +10,13 @@
  - Typescript
  - ESLint
  - Tailwind CSS
+ - Next SEO
  - GSAP
  - react-transition-group
- - Next SEO
+ - Page transition component
+ - "Loading screen" component
  - Base styling, layouts, helper components, custom 404 etc.
+ - Security headers config files for Vercel and Netlify
 
 ## Build setup
 ```bash
