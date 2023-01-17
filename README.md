@@ -11,6 +11,7 @@
  - ESLint
  - Tailwind CSS
  - Next SEO
+ - next-sitemap
  - GSAP
  - react-transition-group
  - Page transition component
